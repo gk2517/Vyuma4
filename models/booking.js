@@ -16,6 +16,11 @@ const bookingSchema = new Schema({
         name: String,
         price: Number,
     },
+    checkIn: Date,
+    checkOut: Date,
+    people: Number,
+    rooms: Number,
+    roomType: String,
     createdAt: {
         type: Date,
         default: Date.now,

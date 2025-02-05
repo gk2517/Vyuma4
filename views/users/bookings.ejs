@@ -13,13 +13,14 @@
                                     <img src="/default-image.jpg" class="card-img-top" alt="Default Image">
                                     <% } %>
                                         <div class="card-body">
-                                            <h5 class="card-title">
-                                                <%= booking.resort.name %>
-                                            </h5>
-                                            <p class="card-text">Price: $<%= booking.resort.price %>
-                                            </p>
-                                            <p class="card-text"><small class="text-muted">Booked on <%=
-                                                        booking.createdAt.toDateString() %></small></p>
+                                            <h5 class="card-title"> <%= booking.resort.name %></h5>
+                                            <p class="card-text">Price: $<%= booking.resort.price %></p>
+                                            <p class="card-text">Check-in: <%= booking.checkIn.toDateString() %></p>
+                                            <p class="card-text">Check-out: <%= booking.checkOut.toDateString() %></p>
+                                            <p class="card-text">People: <%= booking.people %></p>
+                                            <p class="card-text">Rooms: <%= booking.rooms %></p>
+                                            <p class="card-text">Room Type: <%= booking.roomType %> </p>
+                                            <p class="card-text"><small class="text-muted">Booked on <%= booking.createdAt.toDateString() %></small></p>
                                         </div>
 
                                         <!-- Cancel Booking Button -->

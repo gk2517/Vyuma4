@@ -5,7 +5,7 @@ const { isLoggedIn } = require("../middleware");
 
 router.post("/", isLoggedIn, async (req, res) => {
   try {
-    const { resortId, resortName, resortPrice } = req.body;
+    const { resortId, resortName, resortPrice, checkIn, checkOut, people, rooms, roomType } = req.body;
 
     const newBooking = new Booking({
       user: req.user._id,
@@ -14,6 +14,11 @@ router.post("/", isLoggedIn, async (req, res) => {
         name: resortName,
         price: resortPrice,
       },
+      checkIn,
+      checkOut,
+      people,
+      rooms,
+      roomType,
     });
 
     await newBooking.save();
