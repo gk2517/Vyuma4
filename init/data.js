@@ -1,224 +1,353 @@
 const sampleListings = [
+
   {
-    title: "Angsana Oasis Spa and Resort",
-    description: "A 4 Star located in Bangalore, Karnataka.",
+    title: "Cozy Homestay in Coorg",
+    description:
+        "Experience the serene beauty of Coorg with this charming homestay. Surrounded by coffee plantations, it's perfect for nature lovers.",
     image: {
-      filename: "hotel_image",
-      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdSjo5VscOcVWr8oFxeV53ZtUR1u-kzO3lxA&s"
+        filename: "listingimage",
+        url: "https://www.selfroadiez.com/wp-content/uploads/2017/03/View-of-the-Cozy-Homestay-at-MadikeriKarnataka.jpg",
     },
-    price: 2000,
-    location: "Bangalore",
-    country: "India"
-  },
-    {
-      title: "Royal Orchid Central",
-      description: "A 4 Star located in Bangalore, Karnataka.",
+    price: 2500,
+    location: "Coorg",
+    country: "India",
+},
+{
+    title: "Luxury Beachside Resort in Goa",
+    description:
+        "Step into luxury at this beachside resort in Goa. Enjoy stunning sunsets and vibrant nightlife.",
+    image: {
+        filename: "listingimage",
+        url: "https://imgmediagumlet.lbb.in/media/2024/05/66506c0b4ccac54665e4546f_1716546571953.jpg",
+    },
+    price: 4500,
+    location: "Goa",
+    country: "India",
+},
+{
+    title: "Heritage Haveli in Udaipur",
+    description:
+        "Stay at this majestic haveli in Udaipur and soak in the stunning lake views and royal architecture.",
+    image: {
+        filename: "listingimage",
+        url: "https://aajhaveli.com/wp-content/uploads/2021/12/DSC07297.jpg",
+    },
+    price: 4000,
+    location: "Udaipur",
+    country: "India",
+},
+{
+    title: "Rustic Retreat in Wayanad",
+    description:
+        "Reconnect with nature at this rustic retreat in Wayanad, surrounded by lush greenery and wildlife.",
+    image: {
+        filename: "listingimage",
+        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/eb/85/1e/vythiri-spring-valley.jpg?w=1200&h=-1&s=1",
+    },
+    price: 2200,
+    location: "Wayanad",
+    country: "India",
+},
+{
+    title: "Houseboat Stay in Alleppey",
+    description:
+        "Enjoy the backwaters of Kerala with a stay in this beautiful houseboat. A unique and tranquil experience awaits.",
+    image: {
+        filename: "listingimage",
+        url: "https://www.exoticahouseboatcruises.com/blogimg/Alleppey%20houseboat%20(2).jpg",
+    },
+    price: 3500,
+    location: "Alleppey",
+    country: "India",
+},
+{
+    title: "Cultural Homestay in Varanasi",
+    description:
+        "Immerse yourself in the spiritual atmosphere of Varanasi with this cultural homestay near the ghats.",
+    image: {
+        filename: "listingimage",
+        url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/591429047.jpg?k=c8999ee65fd575f2726a677343f3c2bc4929a2092494bcc30974ac34e68481f3&o=&hp=1",
+    },
+    price: 1500,
+    location: "Varanasi",
+    country: "India",
+},
+{
+    title: "Tea Estate Bungalow in Darjeeling",
+    description:
+        "Nestled in the scenic tea estates, this bungalow offers stunning views and a tranquil experience.",
+    image: {
+        filename: "listingimage",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqzhpN0WH4pnIs2GzKOCZmaLbaPgsT01YARg&s",
+    },
+    price: 3200,
+    location: "Darjeeling",
+    country: "India",
+},
+{
+    title: "Luxury Hilltop Villa in Ooty",
+    description:
+        "Relax and rejuvenate in this luxurious villa offering panoramic views of the Nilgiri Hills.",
+    image: {
+        filename: "listingimage",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDsWPi91XsaLUa35-yJNWHwZQKhZ0QcMyPrw&s",
+    },
+    price: 4800,
+    location: "Ooty",
+    country: "India",
+},
+{
+    title: "Jungle Lodge in Bandhavgarh",
+    description:
+        "Stay close to nature at this eco-friendly jungle lodge near Bandhavgarh National Park.",
+    image: {
+        filename: "listingimage",
+        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/e4/db/28/bandhavgarh-jungle-lodge.jpg?w=700&h=-1&s=1",
+    },
+    price: 3800,
+    location: "Bandhavgarh",
+    country: "India",
+},
+{
+    title: "Lakefront Cottage in Nainital",
+    description:
+        "Enjoy serene views of the lake in this cozy cottage located in the heart of Nainital.",
+    image: {
+        filename: "listingimage",
+        url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/223507148.jpg?k=117b17ce237c24f13a55a196992f7d67df7327afe4c24b933712035e363d9fa8&o=&hp=1",
+    },
+    price: 2600,
+    location: "Nainital",
+    country: "India",
+},
+{
+    title: "Heritage Bungalow in Shillong",
+    description:
+        "Explore the charm of Shillong with a stay in this beautiful heritage bungalow surrounded by hills.",
+    image: {
+        filename: "listingimage",
+        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/74/b1/a3/the-bunglow.jpg?w=500&h=-1&s=1",
+    },
+    price: 3400,
+    location: "Shillong",
+    country: "India",
+},
+{
+    title: "Himalayan Retreat in Rishikesh",
+    description:
+        "Recharge your soul at this Himalayan retreat, offering yoga sessions and breathtaking mountain views.",
+    image: {
+        filename: "listingimage",
+        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/d6/18/b2/high-bank-himalayan-retreat.jpg?w=700&h=-1&s=1",
+    },
+    price: 3000,
+    location: "Rishikesh",
+    country: "India",
+},
+{
+    title: "Desert Camp in Jaisalmer",
+    description:
+        "Experience the magic of the Thar Desert with a stay in this luxurious desert camp under the stars.",
+    image: {
+        filename: "listingimage",
+        url: "https://www.campinginjaisalmer.com/assets/img/about/Canvas-Club-Wahiba-tent.jpg",
+    },
+    price: 3500,
+    location: "Jaisalmer",
+    country: "India",
+},
+{
+    title: "City Center Hotel in Mumbai",
+    description:
+        "Conveniently located in the heart of Mumbai, this hotel is ideal for business and leisure travelers.",
+    image: {
+        filename: "listingimage",
+        url: "https://res.cloudinary.com/simplotel/image/upload/x_0,y_536,w_3156,h_1775,r_0,c_crop,q_80,fl_progressive/w_900,f_auto,c_fit/hotel-diplomat/Exterior_Nighttime_1_xzx8ts",
+    },
+    price: 5000,
+    location: "Mumbai",
+    country: "India",
+},
+  {
+      title: "Mountain View Lodge in Manali",
+      description:
+          "Wake up to breathtaking mountain views at this charming lodge in Manali, perfect for adventure seekers and nature lovers.",
       image: {
-        filename: "hotel_image",
-        url: "https://pix10.agoda.net/hotelImages/49178/-1/47321b7e47c3582bbf3a65eb0fdcc493.jpg?ce=0&s=414x232"
+          filename: "listingimage",
+          url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/413455650.jpg?k=24aeec3c4d9ef2ca136d06d905648cfac86166ddd361df9de1aa3bdc7cb8f94f&o=&hp=1",
+      },
+      price: 2800,
+      location: "Manali",
+      country: "India",
+  },
+  {
+      title: "Hilltop Stay in Munnar",
+      description:
+          "This hilltop homestay in Munnar offers sweeping views of tea plantations and a peaceful escape from the city.",
+      image: {
+          filename: "listingimage",
+          url: "https://media1.thrillophilia.com/filestore/n7kshecy792phm9v8icuqx11p0v9_aranyaka-resorts.jpg",
       },
       price: 2700,
-      location: "Bangalore",
-      country: "India"
-    },
-    {
-      title: "REGENTA RESORT BELGAVI",
-      description: "A 5 Star located in Belgaum, Karnataka.",
+      location: "Munnar",
+      country: "India",
+  },
+  {
+      title: "Luxury Tented Camp in Ranthambore",
+      description:
+          "Stay close to the wild with this luxurious tented camp near Ranthambore National Park.",
       image: {
-        filename: "hotel_image",
-        url: "https://pix10.agoda.net/property/36770667/0/4f5da8677e9af334b9d78b19585cdf01.jpg?ce=0&s=414x232"
+          filename: "listingimage",
+          url: "https://www.oberoihotels.com/-/media/oberoi-hotels/website-images/the-oberoi-vanyavilas-ranthambhore/luxury-tent/spotlight/414x580.jpg",
       },
-      price: 1300,
-      location: "Belgaum",
-      country: "India"
-    },
-    {
-      title: "The Tamara Coorg",
-      description: "A 5 Star located in Madikeri, Karnataka.",
+      price: 5500,
+      location: "Ranthambore",
+      country: "India",
+  },
+  {
+      title: "Forest Retreat in Kabini",
+      description:
+          "Nestled in the heart of Kabini, this retreat offers a perfect blend of luxury and nature.",
       image: {
-        filename: "hotel_image",
-        url: "https://www.skywaytour.com/media/gallery/367-2021-09-15-04-17-27-thetamaracoorg2.jpg"
+          filename: "listingimage",
+          url: "https://cdn.junglelodges.com/uploads/2020/03/2-50.jpg",
       },
-      price: 1800,
-      location: "Madikeri",
-      country: "India"
-    },
-    {
-      title: "Radisson Blu Plaza Hotel Mysore",
-      description: "A 5 Star located in Mysore, Karnataka.",
+      price: 4800,
+      location: "Kabini",
+      country: "India",
+  },
+  {
+      title: "Riverside Stay in Rishikesh",
+      description:
+          "Enjoy the soothing sounds of the Ganges at this riverside homestay in Rishikesh.",
       image: {
-        filename: "hotel_image",
-        url: "https://staging.blessingsonthenet.com/img/uploads/hotels/aim_bn_1440067881.jpg"
+          filename: "listingimage",
+          url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2XLNwCL-hHwkf4Zyy0ABNTMe0cdU0d71A_Q&s",
       },
-      price: 2500,
+      price: 3200,
+      location: "Rishikesh",
+      country: "India",
+  },
+  {
+      title: "Colonial Homestay in Ooty",
+      description:
+          "Step back in time with this colonial-style homestay in Ooty, offering classic architecture and lush gardens.",
+      image: {
+          filename: "listingimage",
+          url: "https://edge.media.datahc.com/HI552304304.jpg?source=Leonardo",
+      },
+      price: 2900,
+      location: "Ooty",
+      country: "India",
+  },
+  {
+      title: "Eco Lodge in Sundarbans",
+      description:
+          "Explore the natural beauty of the Sundarbans while staying at this eco-friendly lodge.",
+      image: {
+          filename: "listingimage",
+          url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ2sB6F2USVlyUJehIYyegLElirpoVGMfGsQ&s",
+      },
+      price: 3800,
+      location: "Sundarbans",
+      country: "India",
+  },
+  {
+      title: "Cultural Stay in Jaipur",
+      description:
+          "Immerse yourself in Rajasthani culture with this traditional homestay in Jaipur.",
+      image: {
+          filename: "listingimage",
+          url: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2022/11/october-the-perfect-time-to-explore-jaipur.jpg",
+      },
+      price: 2400,
+      location: "Jaipur",
+      country: "India",
+  },
+  {
+      title: "Adventure Camp in Ladakh",
+      description:
+          "Embark on a thrilling adventure with this camp offering panoramic views of Ladakh's stunning landscapes.",
+      image: {
+          filename: "listingimage",
+          url: "https://www.tourmyindia.com/states/ladakh/imagess/camping-in-ladakh2.jpg",
+      },
+      price: 6500,
+      location: "Ladakh",
+      country: "India",
+  },
+  {
+      title: "Sea View Villa in Kovalam",
+      description:
+          "Enjoy the tranquility of the Arabian Sea from this luxurious villa in Kovalam.",
+      image: {
+          filename: "listingimage",
+          url: "https://promos.makemytrip.com/altaccoimages/listing/villa_pwa.jpg",
+      },
+      price: 4300,
+      location: "Kovalam",
+      country: "India",
+  },
+  {
+      title: "Charming Cottage in Pachmarhi",
+      description:
+          "Relax at this charming cottage in Pachmarhi, surrounded by lush forests and waterfalls.",
+      image: {
+          filename: "listingimage",
+          url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/f8/3c/pachmarhi-ecotel.jpg?w=1200&h=-1&s=1",
+      },
+      price: 2200,
+      location: "Pachmarhi",
+      country: "India",
+  },
+  {
+      title: "Royal Retreat in Mysore",
+      description:
+          "Live like royalty at this luxurious retreat near the Mysore Palace.",
+      image: {
+          filename: "listingimage",
+          url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdaLV9LN0fJUSJ7oThwKrA3fTgvTapRkRLf2yrPMZOoDy_cmlFYcGwfsCP3Qvc-DGgYJo&usqp=CAU",
+      },
+      price: 3500,
       location: "Mysore",
-      country: "India"
-    },
-    {
-      title: "JAYA TOURIST HOME",
-      description: "A 3 Star located in Paravoor, Kerala.",
+      country: "India",
+  },
+  {
+      title: "Yoga Ashram in Pondicherry",
+      description:
+          "Find your inner peace at this serene yoga ashram in Pondicherry, steps away from the beach.",
       image: {
-        filename: "hotel_image",
-        url: "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/89/5d/9e654098015c197b7f61029747b1aa552f5a9792eed6771641ad9a54cace.jpeg"
-      },
-      price: 1500,
-      location: "Paravoor",
-      country: "India"
-    },
-    {
-      title: "Ramee Guestline Hotel",
-      description: "A 4 Star located in Mumbai, Maharashtra.",
-      image: {
-        filename: "hotel_image",
-        url: "https://pix10.agoda.net/property/30116870/0/d7d4bb6abd2ce5e6e61147ecfafb8907.jpg?ce=0&s=414x232"
-      },
-      price: 3300,
-      location: "Mumbai",
-      country: "India"
-    },
-    {
-      title: "The Fern Royal Farm Resort",
-      description: "A 4 Star located in Anjar, Gujarat.",
-      image: {
-        filename: "hotel_image",
-        url: "https://media.easemytrip.com/media/hotel/shl-20091278410023/common/commonhhcpox.jpg"
-      },
-      price: 2200,
-      location: "Anjar",
-      country: "India"
-    },
-    {
-      title: "Sardar Sarovar Resort",
-      description: "A 4 Star located in Kevadiya, Gujarat.",
-      image: {
-        filename: "hotel_image",
-        url: "https://images.trvl-media.com/lodging/63000000/62590000/62585000/62584968/a9fc7c97.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill"
-      },
-      price: 1900,
-      location: "Kevadiya",
-      country: "India"
-    },
-    {
-      title: "Vascodagama Beach Resort",
-      description: "A 4 Star located in Calicut, Kerala.",
-      image: {
-        filename: "hotel_image",
-        url: "https://cdn2.advanceinfotech.org/kozhikode.directory/1200x675/business/1058/vascoda-gama-beach-resort-kappad9-1641296627.webp"
-      },
-      price: 2200,
-      location: "Calicut",
-      country: "India"
-    },
-    {
-      title: "ROYAL ORCHID BEACH RESORT AND SPA",
-      description: "A 5 Star located in Salcette, Goa.",
-      image: {
-        filename: "hotel_image",
-        url: "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_534,q_40,w_800/hotelier-images/88/4b/01ed890acf92c36612e041860f74cc166105c8dd0eef29fde175bbf5cddf.jpeg"
-      },
-      price: 3300,
-      location: "Salcette",
-      country: "India"
-    },
-    {
-      title: "Hyatt Regency Gurgaon",
-      description: "A 5 Star located in Gurgaon, Haryana.",
-      image: {
-        filename: "hotel_image",
-        url: "https://pix10.agoda.net/hotelImages/2289463/0/80e644fd7bb516009d5fb36035561b92.jpg?ca=27&ce=0&s=414x232"
-      },
-      price: 1200,
-      location: "Gurgaon",
-      country: "India"
-    },
-    {
-      title: "Wildflower Hall",
-      description: "A 5 Star located in Shimla, Himachal Pradesh.",
-      image: {
-        filename: "hotel_image",
-        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/dd/51/cc/wildflower-hall-shimla.jpg?w=700&h=-1&s=1"
+          filename: "listingimage",
+          url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6h0CfM1LLJEVXlyJYORa1c4bNG83Gd_cpDwqBz2uA6ZaI9z5yIgFtNWPk9oeFjE-88Q&usqp=CAU",
       },
       price: 1800,
-      location: "Shimla",
-      country: "India"
-    },
-    {
-      title: "The Oberoi Amarvilas",
-      description: "A 5 Star located in Agra, Uttar Pradesh.",
+      location: "Pondicherry",
+      country: "India",
+  },
+  {
+      title: "Hilltop Homestay in Chikmagalur",
+      description:
+          "Sip on fresh coffee and enjoy misty mornings at this cozy hilltop homestay in Chikmagalur.",
       image: {
-        filename: "hotel_image",
-        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/dd/51/cc/wildflower-hall-shimla.jpg?w=700&h=-1&s=1"
+          filename: "listingimage",
+          url: "https://ik.imagekit.io/xoxqszf3k/wp-content/uploads/2023/06/Hill-Top-Plantation-Bungalow-in-Chikmagalur-1-900x500.jpg",
       },
       price: 3000,
-      location: "Agra",
-      country: "India"
-    },
-    {
-      title: "Taj Exotica Resort and Spa Andamans",
-      description: "A 5 Star located in Havelock Island, Andaman And Nicobar.",
+      location: "Chikmagalur",
+      country: "India",
+  },
+  {
+      title: "Desert Homestay in Bikaner",
+      description:
+          "Discover desert life with this rustic homestay in the golden sands of Bikaner.",
       image: {
-        filename: "hotel_image",
-        url: "https://www.remotelands.com/storage/media/1937/conversions/b190124011-banner-size.jpg"
-      },
-      price: 2000,
-      location: "Havelock Island",
-      country: "India"
-    },
-    {
-      title: "SAMROHA RESORT",
-      description: "A 5 Star located in Chalakudy, Kerala.",
-      image: {
-        filename: "hotel_image",
-        url: "https://www.weddingpullav.com/wp-content/uploads/2021/08/samroja-resort-athirappilly-04.jpg"
-      },
-      price: 1500,
-      location: "Chalakudy",
-      country: "India"
-    },
-    {
-      title: "HYATT REGENCY",
-      description: "A 5 Star located in Thrissur, Kerala.",
-      image: {
-        filename: "hotel_image",
-        url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/82/11/ea/exterior-day.jpg?w=700&h=-1&s=1"
-      },
-      price: 2500,
-      location: "Thrissur",
-      country: "India"
-    },
-    {
-      title: "Seyfert Sarovar Premiere",
-      description: "A 5 Star located in Dehradun, Uttarakhand.",
-      image: {
-        filename: "hotel_image",
-        url: "https://pix10.agoda.net/hotelImages/41085589/-1/8872706e16d9f000b9fc7ef300bd2289.jpg?ce=0"
-      },
-      price: 1750,
-      location: "Dehradun",
-      country: "India"
-    },
-    {
-      title: "Hotel Taj Krishna",
-      description: "A 5 Star located in Hyderabad, Telangana.",
-      image: {
-        filename: "hotel_image",
-        url: "https://assets.cntraveller.in/photos/60b9fd97e1b212c19a816daa/16:9/w_1024%2Cc_limit/H0XXD_27650432_H0XXDL07-401261464-1366x768.jpg"
+          filename: "listingimage",
+          url: "https://desert-sun-homestay.hotels-rajasthan.com/data/Pics/OriginalPhoto/15593/1559337/1559337010/desert-sun-homestay-bikaner-pic-10.JPEG",
       },
       price: 2300,
-      location: "Hyderabad",
-      country: "India"
-    },
-    {
-      title: "Hyatt Regency Ludhiana",
-      description: "A 5 Star located in Ludhiana, Punjab.",
-      image: {
-        filename: "hotel_image",
-        url: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/http://media.iceportal.com/49857/photos/63868059_XL/Hyatt-Regency-Ludhiana-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto"
-      },
-      price: 2500,
-      location: "Ludhiana",
-      country: "India"
-    }
+      location: "Bikaner",
+      country: "India",
+  },
 ];
 
-module.exports = { data: sampleListings };
+  module.exports = { data: sampleListings };
