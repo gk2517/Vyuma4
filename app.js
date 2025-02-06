@@ -142,7 +142,8 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const authRoutes = require("./routes/auth");
 const bookingsRoutes = require("./routes/bookings");
-const userRoutes = require("./routes/userRoutes"); // Added userRoutes
+const userRoutes = require("./routes/userRoutes");
+const searchRoutes = require("./routes/search"); // Added userRoutes
 
 // Database URL and connection
 const dbUrl = process.env.DB_URL;
@@ -218,6 +219,7 @@ app.use("/listings/:id/reviews", reviewsRouter); // Handles reviews
 app.use("/", userRouter); // Handles general user-related functionality
 app.use("/", userRoutes); // Handles /userIndex route
 app.use("/bookings", bookingsRoutes); // Handles bookings
+app.use("/search", searchRoutes);
 
 // Serve index.html at the root URL
 app.get("/", (req, res) => {

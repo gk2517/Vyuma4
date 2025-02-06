@@ -1,4 +1,11 @@
 <style>
+   footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 1rem;
+        
+    }
   .f-info-links a {
     text-decoration: none;
     color: #222222;
@@ -86,12 +93,15 @@
         <a class="nav-link" href="/bookings">Bookings</a>
       </div>
 
-      <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp" type="search" placeholder="Search destination">
+      <div class="navbar-nav ms-auto" >
+        <form class="d-flex" role="search" action="/search" method="GET">
+          <input class="form-control me-2 search-inp" type="search"  name="q" placeholder="Search resort,place">
           <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
         </form>
       </div>
+
+     
+
 
       <a class="nav-link disabled" aria-disabled="true"></a>
 

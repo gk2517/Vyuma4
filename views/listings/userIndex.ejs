@@ -121,21 +121,23 @@
             object-fit: cover;
         }
 
-       
-
-       
 
 
-        
+
+
+
+        .card-footer .details span {
+            margin-right: 10px;
+        }
 
         .price {
             font-weight: bold;
             color: #000;
         }
 
-      
 
-       
+
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -151,77 +153,84 @@
 
     <div class="container mt-4">
         <div class="row g-4">
-            <% allListings.forEach((listing, index)=> { %>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.title %>">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= listing.title %>
-                            </h5>
-                            <p class="card-text text-muted"><i class="fa fa-map-marker-alt"></i>
-                                <%= listing.location %>
-                            </p>
-                            <p class="price">&#8377;<%= listing.price %>
+            <% if (allListings.length===0) { %>
+                <p class="text-center">No resorts found. Try another search!</p>
+                <% } else { %>
+                    <% allListings.forEach((listing, index)=> { %>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card">
+                                <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.title %>">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= listing.title %>
+                                    </h5>
+                                    <p class="card-text text-muted"><i class="fa fa-map-marker-alt"></i>
+                                        <%= listing.location %>
+                                    </p>
+                                    <p class="price">&#8377;<%= listing.price %>
 
-                            </p>
-                            <div class="card-footer d-flex justify-content-between align-items-center">
-                                <button class="book-btn"
-                                    onclick="openModal('<%= listing._id %>', '<%= listing.title %>', '<%= listing.price %>')">Book
-                                    Now</button>
+                                    </p>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
+                                        <button class="book-btn"
+                                            onclick="openModal('<%= listing._id %>', '<%= listing.title %>', '<%= listing.price %>')">Book
+                                            Now</button>
+                                    </div>
+
+                                </div>
                             </div>
 
                         </div>
-                    </div>
-                </div>
-                <% }); %>
+                        <% }); %>
+                            <% } %>
 
-                    <div id="bookingModal" class="modal">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
-                                <span class="close-btn" onclick="closeModal()">&times;</span>
-                            </div>
+                                <div id="bookingModal" class="modal">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
+                                            <span class="close-btn" onclick="closeModal()">&times;</span>
+                                        </div>
 
-                            <div class="modal-body">
-                                <form action="/bookings" method="POST">
-                                    <div class="mb-3">
-                                        <label for="checkIn" class="form-label">Check-in</label>
-                                        <input type="date" class="form-control" name="checkIn" id="checkIn" required>
+                                        <div class="modal-body">
+                                            <form action="/bookings" method="POST">
+                                                <div class="mb-3">
+                                                    <label for="checkIn" class="form-label">Check-in</label>
+                                                    <input type="date" class="form-control" name="checkIn" id="checkIn"
+                                                        required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="checkOut" class="form-label">Check-out</label>
+                                                    <input type="date" class="form-control" name="checkOut"
+                                                        id="checkOut" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="people" class="form-label">No. of People</label>
+                                                    <input type="number" class="form-control" name="people" id="people"
+                                                        min="1" max="4" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="rooms" class="form-label">No. of Rooms</label>
+                                                    <input type="number" class="form-control" name="rooms" id="rooms"
+                                                        min="1" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="roomType" class="form-label">Room Type</label>
+                                                    <select class="form-select" name="roomType" id="roomType">
+                                                        <option value="AC">AC</option>
+                                                        <option value="Non-AC">Non-AC</option>
+                                                    </select>
+                                                </div>
+                                                <input type="hidden" name="resortId" id="resortId">
+                                                <input type="hidden" name="resortName" id="resortName">
+                                                <input type="hidden" name="resortPrice" id="resortPrice">
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal" onclick="closeModal()">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Book</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="checkOut" class="form-label">Check-out</label>
-                                        <input type="date" class="form-control" name="checkOut" id="checkOut" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="people" class="form-label">No. of People</label>
-                                        <input type="number" class="form-control" name="people" id="people" min="1"
-                                            max="4" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="rooms" class="form-label">No. of Rooms</label>
-                                        <input type="number" class="form-control" name="rooms" id="rooms" min="1"
-                                            required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="roomType" class="form-label">Room Type</label>
-                                        <select class="form-select" name="roomType" id="roomType">
-                                            <option value="AC">AC</option>
-                                            <option value="Non-AC">Non-AC</option>
-                                        </select>
-                                    </div>
-                                    <input type="hidden" name="resortId" id="resortId">
-                                    <input type="hidden" name="resortName" id="resortName">
-                                    <input type="hidden" name="resortPrice" id="resortPrice">
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                            onclick="closeModal()">Close</button>
-                                        <button type="submit" class="btn btn-primary">Book</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                                </div>
         </div>
 
 

@@ -19,7 +19,31 @@ router.route("/")
 //NEW ROUTE
 router.get("/new",isLoggedIn,listingController.renderNewForm);
 
+router.get("/userIndex", async (req, res) => {
+    try {
+        let query = req.query.q;
+        let allListings;
 
+        if (query) {
+            // Search for listings by resort name or location (case-insensitive)
+            allListings = await Listing.find({
+                $or: [
+                    { title: { $regex: query, $options: "i" } },
+                    { location: { $regex: query, $options: "i" } }
+                ]
+            });
+        } else {
+            // If no search query, fetch all listings
+            allListings = await Listing.find({});
+        }
+
+        res.render("listings/userIndex", { allListings });
+    } catch (error) {
+        console.error("Error fetching listings:", error);
+        req.flash("error", "Something went wrong!");
+        res.redirect("/");
+    }
+});
 router.route("/:id")
 .get( wrapAsync(listingController.showListing)) //show
 .put(isLoggedIn,isOwner,
