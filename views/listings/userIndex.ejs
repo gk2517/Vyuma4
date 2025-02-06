@@ -1,6 +1,54 @@
 <% layout("/layouts/userBoilerplate") %>
 
     <style>
+        .container {
+            margin-top: 5rem;
+        }
+
+        .search-f-s {
+            /* justify-content: center; */
+            position: relative;
+            bottom: 2rem;
+        }
+
+        /* .search-f-s-div {
+            position: relative;
+            
+        } */
+        .search-f-s-div form {
+            border-radius: 35px;
+            background-color: #f4f4f4;
+            padding: 1rem;
+        }
+
+        .search-f-s-div form .filter-div {
+            margin-left: 6.5rem;
+
+
+        }
+
+    
+
+
+        .search-f-s-div select {
+            border-radius: 25px;
+            padding: 0.5rem 3rem 0.5rem 3rem;
+            font-size: 1rem;
+        }
+
+        .filter-btn {
+            background-color: #fe424d;
+            color: #fff;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            border: none;
+        }
+
+        .filter-btn:hover {
+            background-color: #fe424d;
+            color: #fff;
+        }
+
         .filter {
             margin-top: 1rem;
             text-align: center;
@@ -152,6 +200,36 @@
 
 
     <div class="container mt-4">
+
+        <div class="row mb-3 search-f-s">
+            <div class="col-md-8 mx-auto search-f-s-div">
+                <form action="/search" method="GET" class="row g-2 align-items-center">
+                    <!-- Price Filter -->
+                    <div class="col-md-3 filter-div">
+                        <select name="priceFilter" class="form-select">
+                            <option value="">Filter by Price</option>
+                            <option value="0-2000">₹0 - ₹2000</option>
+                            <option value="2001-5000">₹2001 - ₹5000</option>
+                            <option value="5001-10000">₹5001 - ₹10,000</option>
+                            <option value="10001">Above ₹10,000</option>
+                        </select>
+                    </div>
+                    <!-- Price Sorting -->
+                    <div class="col-md-3 sort-div">
+                        <select name="sortBy" class="form-select">
+                            <option value="">Sort by</option>
+                            <option value="low-high" <%=selectedSort==="low-high" ? 'selected' : '' %>>Price: Low to
+                                High</option>
+                            <option value="high-low" <%=selectedSort==="high-low" ? 'selected' : '' %>>Price: High to
+                                Low</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 filter-btn-div">
+                        <button class="btn btn-success w-100 filter-btn" type="submit">Filter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="row g-4">
             <% if (allListings.length===0) { %>
                 <p class="text-center">No resorts found. Try another search!</p>
