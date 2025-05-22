@@ -3,6 +3,7 @@
 ![Login page](login.jpg)
 ![](main.jpg)
 ![Booking](book.jpg)
+![bot](bot.jpg)
 
 ### 🚀 A platform that seamlessly integrates functionality for users to list, edit, and review accommodations, complete with secure login capabilities
 
