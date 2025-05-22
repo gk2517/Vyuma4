@@ -1,5 +1,5 @@
 # VYUMA
-![VYUMA](ss.png)
+![VYUMA](homepage.jpg)
 
 ### 🚀 A platform that seamlessly integrates functionality for users to list, edit, and review accommodations, complete with secure login capabilities
 
