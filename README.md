@@ -1,11 +1,9 @@
 # VYUMA
 ![VYUMA](homepage.jpg)
-![Login page](login.jpg)
-![](main.jpg)
-![Booking](book.jpg)
-![bot](bot.jpg)
 
-### 🚀 A platform that seamlessly integrates functionality for users to list, edit, and review accommodations, complete with secure login capabilities
+### 🚀 A platform that seamlessly integrates functionality for users to list, edit, and review accommodations, complete with secure login capabilitie
+
+![Login page](login.jpg)
 
 ## Introduction
 
@@ -13,7 +11,17 @@ Functional booking website, fully integrated front-end and back-end, designed to
 
 It is made using Html, Css, Js, NodeJs, ExpressJs, EJs and MongoDB.
 
+![](main.jpg)
 
+
+## Booking
+
+![Booking](book.jpg)
+
+
+## AI Chatbot
+
+![bot](bot.jpg)
 
 to install all required packages 
 npm init -y
